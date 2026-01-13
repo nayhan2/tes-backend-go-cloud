@@ -13,7 +13,7 @@ import (
 
 // @title User CRUD API
 // @version 1.0
-// @description API CRUD sederhana untuk manajemen User dengan Gin dan GORM
+// @description API CRUD sederhana untuk manajemen User dengan Gin dan GORMs dan kiki
 // @host localhost:8080
 // @BasePath /
 

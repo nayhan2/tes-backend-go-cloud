@@ -4,10 +4,10 @@ definitions:
     description: Request body untuk membuat user baru
     properties:
       email:
-        example: nayhan@example.com
+        example: john@example.com
         type: string
       name:
-        example: Nayhan asik
+        example: John Doe
         type: string
     required:
     - email
@@ -17,10 +17,10 @@ definitions:
     description: Request body untuk update user
     properties:
       email:
-        example: nayhan@example.com
+        example: john.updated@example.com
         type: string
       name:
-        example: Nayhan Updated
+        example: John Updated
         type: string
     type: object
   models.User:
@@ -30,13 +30,13 @@ definitions:
         example: "2024-01-13T12:00:00Z"
         type: string
       email:
-        example: nayhan@example.com
+        example: john@example.com
         type: string
       id:
         example: 1
         type: integer
       name:
-        example: Nayhan asik
+        example: John Doe
         type: string
       updated_at:
         example: "2024-01-13T12:00:00Z"

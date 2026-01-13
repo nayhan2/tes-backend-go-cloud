@@ -280,7 +280,7 @@ var SwaggerInfo = &swag.Spec{
 	BasePath:         "/",
 	Schemes:          []string{},
 	Title:            "User CRUD API",
-	Description:      "API CRUD sederhana untuk manajemen User dengan Gin dan GORM",
+	Description:      "API CRUD sederhana untuk manajemen User dengan Gin dan GORMs dan kiki",
 	InfoInstanceName: "swagger",
 	SwaggerTemplate:  docTemplate,
 	LeftDelim:        "{{",

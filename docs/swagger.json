@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "API CRUD sederhana untuk manajemen User dengan Gin dan GORM",
+        "description": "API CRUD sederhana untuk manajemen User dengan Gin dan GORMs dan kiki",
         "title": "User CRUD API",
         "contact": {},
         "version": "1.0"
