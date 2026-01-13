@@ -17,10 +17,10 @@ definitions:
     description: Request body untuk update user
     properties:
       email:
-        example: john.updated@example.com
+        example: nayhan@example.com
         type: string
       name:
-        example: John Updated
+        example: Nayhan Updated
         type: string
     type: object
   models.User:
@@ -30,13 +30,13 @@ definitions:
         example: "2024-01-13T12:00:00Z"
         type: string
       email:
-        example: john@example.com
+        example: nayhan@example.com
         type: string
       id:
         example: 1
         type: integer
       name:
-        example: John Doe
+        example: Nayhan asik
         type: string
       updated_at:
         example: "2024-01-13T12:00:00Z"
@@ -45,7 +45,7 @@ definitions:
 host: localhost:8080
 info:
   contact: {}
-  description: API CRUD sederhana untuk manajemen User dengan Gin dan GORM
+  description: API CRUD sederhana untuk manajemen User dengan Gin dan GORMs dan kiki
   title: User CRUD API
   version: "1.0"
 paths:
