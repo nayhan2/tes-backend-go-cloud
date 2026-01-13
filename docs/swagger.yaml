@@ -4,10 +4,10 @@ definitions:
     description: Request body untuk membuat user baru
     properties:
       email:
-        example: john@example.com
+        example: nayhan@example.com
         type: string
       name:
-        example: John Doe
+        example: Nayhan asik
         type: string
     required:
     - email
