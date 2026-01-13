@@ -1,0 +1,183 @@
+basePath: /
+definitions:
+  models.CreateUserRequest:
+    description: Request body untuk membuat user baru
+    properties:
+      email:
+        example: john@example.com
+        type: string
+      name:
+        example: John Doe
+        type: string
+    required:
+    - email
+    - name
+    type: object
+  models.UpdateUserRequest:
+    description: Request body untuk update user
+    properties:
+      email:
+        example: john.updated@example.com
+        type: string
+      name:
+        example: John Updated
+        type: string
+    type: object
+  models.User:
+    description: Model data user
+    properties:
+      created_at:
+        example: "2024-01-13T12:00:00Z"
+        type: string
+      email:
+        example: john@example.com
+        type: string
+      id:
+        example: 1
+        type: integer
+      name:
+        example: John Doe
+        type: string
+      updated_at:
+        example: "2024-01-13T12:00:00Z"
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: API CRUD sederhana untuk manajemen User dengan Gin dan GORM
+  title: User CRUD API
+  version: "1.0"
+paths:
+  /users:
+    get:
+      consumes:
+      - application/json
+      description: Mengambil daftar semua user dari database
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Mendapatkan semua users
+      tags:
+      - users
+    post:
+      consumes:
+      - application/json
+      description: Menambahkan user baru ke database
+      parameters:
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.CreateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "201":
+          description: Created
+          schema:
+            $ref: '#/definitions/models.User'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Membuat user baru
+      tags:
+      - users
+  /users/{id}:
+    delete:
+      consumes:
+      - application/json
+      description: Menghapus user berdasarkan ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Hapus user
+      tags:
+      - users
+    get:
+      consumes:
+      - application/json
+      description: Mengambil detail satu user berdasarkan ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Mendapatkan user berdasarkan ID
+      tags:
+      - users
+    put:
+      consumes:
+      - application/json
+      description: Mengupdate data user berdasarkan ID
+      parameters:
+      - description: User ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      - description: Data User
+        in: body
+        name: user
+        required: true
+        schema:
+          $ref: '#/definitions/models.UpdateUserRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.User'
+        "400":
+          description: Bad Request
+          schema:
+            additionalProperties: true
+            type: object
+        "404":
+          description: Not Found
+          schema:
+            additionalProperties: true
+            type: object
+      summary: Update user
+      tags:
+      - users
+swagger: "2.0"

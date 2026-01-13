@@ -1,0 +1,32 @@
+# Git
+.git
+.gitignore
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+
+# Build
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Test
+*_test.go
+coverage.out
+
+# Docker
+Dockerfile*
+docker-compose*
+.dockerignore
+
+# Environment (JANGAN copy credentials ke image!)
+.env
+.env.*
+
+# Misc
+README.md
+*.md
